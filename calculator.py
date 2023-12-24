@@ -9,6 +9,7 @@ def calculator():
     print("3. Multiplication")
     print("4. Division")
 
+    
     operation = input("Enter your choice : ")
     ans = None
     if operation == "1":
