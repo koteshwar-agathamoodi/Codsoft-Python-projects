@@ -11,6 +11,7 @@ def determine_winner(user_choice, computer_choice):
         return "You win!"
     else:
         return "You lose!"
+        
 
 def play_again():
     choice = input("Do you want to play again? (yes/no): ")
