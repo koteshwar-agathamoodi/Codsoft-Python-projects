@@ -10,7 +10,7 @@ def calculator():
     print("4. Division")
 
     operation = input("Enter your choice : ")
-
+    ans = None
     if operation == "1":
         ans = num1 + num2
         print(f"The result of addition is: {ans}")
@@ -24,7 +24,7 @@ def calculator():
         if num2 == 0:
             print("Cannot divide by zero!")
         else:
-            result = num1 / num2
+            ans = num1 / num2
             print(f"The result of division is: {ans}")
     else:
         print("Invalid choice, Please try again.")
