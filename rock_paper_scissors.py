@@ -1,5 +1,9 @@
 import random
-
+options = {
+    "R":"rock",
+    "S":"scissors",
+    "P":"paper"
+}
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         return "It's a tie!"
@@ -10,7 +14,7 @@ def determine_winner(user_choice, computer_choice):
 
 def play_again():
     choice = input("Do you want to play again? (yes/no): ")
-    return choice.lower() == "yes"
+    return choice.lower() in ["yes","y"]
 
 def rock_paper_scissors():
     print("Welcome to Rock-Paper-Scissors!")
@@ -18,8 +22,15 @@ def rock_paper_scissors():
     computer_score = 0
 
     while True:
-        user_choice = input("Choose rock, paper, or scissors: ")
-        computer_choice = random.choice(["rock", "paper", "scissors"])
+        user_choice = input("Choose rock(R), paper(P), or scissors(S): ")
+        computer_choice = random.choice(list(options.values()))
+        user_choice = user_choice.upper()
+
+        if user_choice not in options:
+            print("Please select valid options from "+",".join(list(options.keys())))
+            continue
+        
+        user_choice = options[user_choice]
 
         print("Your choice:", user_choice)
         print("Computer's choice:", computer_choice)
